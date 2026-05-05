@@ -1928,9 +1928,26 @@ Consider now the relaxed problem
   \quad \text{s.t.} \quad
   c_0 + \PV^i[c_1] \leq \omega^i_0 + \PV^i[\omega^i_1] + V(k, \beta) \xi^i.
 \end{equation}
+Type: exposition / mathematical clarification  
+Location: Chapter 3, Theorem 3.5 proof, paragraph introducing the relaxed problem  
+Comment:  
+The proof implicitly relies on the fact that the marginal rates of substitution $MRS^i_s(c^i)$ are well-defined. This requires the equilibrium allocation $c^i$ to be strictly positive. This follows from (C.4) together with individual rationality of equilibrium allocations, but it should be stated explicitly. In addition, the argument uses that the budget constraint of the relaxed problem binds at the optimum, which follows from strict monotonicity of preferences but is not explicitly mentioned.  
+Suggestion:  
+Add a sentence clarifying that equilibrium allocations are individually rational (since the endowment allocation is always feasible) and so by (C.4) we have $c^i \gg 0$, ensuring that $MRS^i_s(c^i)$ and hence $PV^i$ are well-defined. Also, explicitly note that the relaxed budget constraint binds at the optimum since $U^i$ is strictly increasing, i.e., $c_0 + PV^i[c_1] = W^i$ at the solution.
+
 The Lagrangian of \eqref{eq:relaxed-problem} has first-order conditions $(u^i)'(c_0) = \mu$ and $\beta^i \nu^i_s (u^i)'(c_s) = \mu \MRS^i_s(c^i)$ for every $s$.
 Substituting the definition of $\MRS^i_s(c^i)$ and matching with $\mu = (u^i)'(c^i_0)$, one obtains $(u^i)'(c_s) = (u^i)'(c^i_s)$ and $(u^i)'(c_0) = (u^i)'(c^i_0)$, i.e., $c = c^i$ by strict concavity of $u^i$.
 Because $U^i$ is concave, $c^i$ is the \emph{global} optimum of the relaxed problem.
+
+Type: mathematical issue  
+Location: Chapter 3, Theorem 3.5 proof, paragraph starting with “Substituting the definition of $MRS^i_s(c^i)$…”  
+Comment:  
+The proof incorrectly concludes that equality of marginal rates of substitution implies equality of consumption allocations. In general, equality of MRS does not imply $c = c^i$. The argument is missing the role of the budget constraint and concavity. The correct reasoning is that $c^i$ satisfies the first-order (KKT) conditions of the relaxed problem by construction, together with the budget constraint holding with equality. Concavity of $U^i$ then guarantees global optimality.  
+Suggestion:  
+Replace the paragraph with:
+\medskip
+\noindent
+Note that $c^i$ satisfies the first-order conditions of the relaxed problem by construction. Indeed, setting $\mu = (u^i)'(c^i_0)$, and using the definition of $MRS^i_s(c^i)$, one verifies that the first-order conditions hold at $c = c^i$. Moreover, from (3.20), $c^i$ satisfies the budget constraint with equality. Therefore, $c^i$ satisfies the KKT conditions of the relaxed problem. Since $U^i$ is concave, these conditions are sufficient for global optimality. Hence, $c^i$ solves the relaxed problem.
 
 Returning to \eqref{eq:PV-bound}, any $c'$ satisfying this inequality is feasible in the relaxed problem, and therefore $U^i(c') \leq U^i(c^i)$.
 Since the candidate $\bigl( (k', \beta'), (c', \theta', \alpha') \bigr)$ was arbitrary, \eqref{eq:strong-unanimity-BGR} follows.
